@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="chat-widget">
+
+
+    <div class="chat-body" #chatBody>
+      <div *ngFor="let message of messages">
+        <div *ngIf="message.role === Sender.USER" class="bubble-right">
+          <div class="chat-text-header">User</div>
+          <span [innerHTML]="message.native" class="chat-text"></span>
+        </div>
+        <div *ngIf="message.role === Sender.LLM" class="bubble-left">
+          <div class="chat-text-header">TUMAssistant</div>
+          <span [innerHTML]="message.native" class="chat-text"></span>
+        </div>
+      </div>
+    </div>
+    <div class="chat-input" style="display: flex; flex-direction: row; align-items: center">
+      <div style="display: flex; flex-direction: row; width: 100%; align-items: center">
+        <jhi-file-upload></jhi-file-upload>
+        <button class="btn-icon" type="submit" (click)="onSend()">
+          <fa-icon [icon]="faMicrophone" size="lg"></fa-icon>
+        </button>
+        <textarea
+          #messageInput
+          [(ngModel)]="newMessageContent"
+          (keydown)="handleKey($event)"
+          rows="1"
+          class="mt-1 block w-full px-5 mx-4 py-2 bg-white rounded-md text-sm
+            focus:outline-none disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+            invalid:border-pink-500 invalid:text-pink-600
+            focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+          type="text"
+          placeholder="How can I help you?"
+          style="font-family: Helvetica Now Display, sans-serif; font-weight: normal"
+        ></textarea>
+      </div>
+      <div>
+        <button class="btn btn-icon" type="submit" (click)="onSend()">
+          <fa-icon [icon]="faPaperPlane" size="sm"></fa-icon>
+        </button>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+

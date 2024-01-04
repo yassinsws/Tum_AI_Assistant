@@ -1,0 +1,21 @@
+<!-- Hidden file input -->
+<input
+  type="file"
+  class="file-input"
+  (change)="onFileSelected($event)"
+  style="display: none;"
+  accept=".pdf, .doc, .docx, .txt"
+/>
+
+<div class="file-upload">
+  <label for="fileInput" class="btn" style="background: none; border: none; color: #3070B3; cursor: pointer;">
+    <fa-icon [icon]="faFileArrowUp" size="lg"></fa-icon>
+  </label>
+  <input
+    type="file"
+    id="fileInput"
+    style="display: none;"
+    (change)="onFileSelected($event)"
+    accept=".pdf, .doc, .docx, .txt"
+  />
+</div>

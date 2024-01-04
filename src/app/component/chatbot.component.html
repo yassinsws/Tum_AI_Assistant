@@ -1,0 +1,21 @@
+<div class="main">
+  <div class="parent">
+    <div class="div1">
+      <img src="assets/images/header.png" style="width: 100%">
+    </div>
+      <div class="div2">
+        <div *ngIf="isLogin">
+          <fa-icon [icon]="faUser" style="color: black"></fa-icon>
+        </div>
+        <div *ngIf="!isLogin">
+          <button class="btn btn-blue text-sm" (click)="onRedirect()">Sign in</button>
+        </div>
+      </div>
+    <div class="div4">
+      <h1> TUMAssistant</h1>
+      <h2> Support Service</h2>
+
+  <jhi-input-bar></jhi-input-bar>
+    </div>
+  </div>
+</div>

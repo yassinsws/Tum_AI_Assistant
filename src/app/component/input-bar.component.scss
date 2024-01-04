@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  position: relative;
+  margin-top: 8px;
+}
+
+.chat-widget {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--iris-chat-widget-background);
+}
+
+.chat-body {
+  height: 375px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.bubble-left,
+.bubble-right {
+  --radius: 10px;
+  --tail-size: 10px;
+  max-width: 50%;
+  margin-bottom: 10px;
+  padding: 1rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  border-radius: 10px;
+
+  ::ng-deep p {
+    margin-bottom: 0;
+  }
+}
+
+.bubble-left {
+  background-color: #3070B3;
+  float: left;
+  place-self: start;
+  margin-right: 1rem;
+}
+
+.bubble-right {
+  margin-left: 2rem;
+  place-self: end;
+  float: right;
+  background-color: #3070B3;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5rem 0 15px 0;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-left: 1rem;
+  margin-right: 2rem;
+}
+
+.chat-text {
+  color: white;
+  font-size: 1rem;
+  font-family: "Helvetica Now Display", sans-serif;
+  font-weight: normal;
+}
+
+.chat-text-header {
+  color: white;
+  font-size: 1.1rem;
+  font-family: "Helvetica Now Display", sans-serif;
+
+}
+
+.chat-input textarea {
+  flex: 1;
+  padding: 10px 0;
+  margin-right: 5px;
+  resize: none;
+  width: 100%;
+}
+
+
+.btn-icon {
+  color: #3070B3;
+  width: 2rem;
+  background-color: transparent;
+  margin-left: 0.5rem;
+}
+
+.btn-blue:hover {
+  background-color: lightgray;
+}
